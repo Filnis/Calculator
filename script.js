@@ -1,12 +1,13 @@
 let screen = document.getElementById("screen");
 screen.textContent = ""
 let dispValue = screen.textContent;
+const buttonList = document.querySelectorAll("button");
 
 // basic functions
-const add = (x, y) => x + y;  
-const subtract = (x, y) => x - y;
-const multiply = (x, y) => x * y;
-const divide = (x, y) => x / y;
+const add = (x, y) => Math.round((x + y)*1000)/1000;  
+const subtract = (x, y) => Math.round((x - y)*1000)/1000;
+const multiply = (x, y) => Math.round((x * y)*1000)/1000;
+const divide = (x, y) => Math.round((x / y)*1000)/1000;
 
 // function operate
 function operate(fNum, op, sNum){
@@ -17,10 +18,16 @@ function operate(fNum, op, sNum){
             return subtract(fNum, sNum);  
         case "X":
             return multiply(fNum, sNum);  
-        case "/":
+        case "÷":
             return divide(fNum, sNum);  
     }
 } 
+
+// use keyboard instead of buttons
+window.addEventListener('keydown', function(e){
+    console.log(e.code);
+    buttonList.forEach(button => {if(button.dataset.key == e.code){button.click()}});
+})
 
 // variables for operate function
 let firstNum = 0;
@@ -80,4 +87,26 @@ equal.addEventListener("click", () => {
     firstNumIn = false;
     equalPressed = true;
     console.log("result = " + result);
+})
+
+let deleteBt = document.getElementById("delete");
+deleteBt.addEventListener("click", () => {
+    currNum = `${currNum}`
+    console.log(`currnum dopo delete = ${currNum}`)
+    currNum = currNum.slice(0, -1);
+    screen.textContent = screen.textContent.slice(0, -1);
+    console.log(`currnum dopo delete trim = ${currNum}`)
+    currNum = currNum*1;
+    
+})
+
+let clearBt = document.getElementById("clear");
+clearBt.addEventListener("click", () => {
+    currNum = 0;
+    screen.textContent = "";
+    firstNumIn = false;
+    firstNum = 0;
+    operator = "";
+    secondNum = 0;
+    result = 0;
 })
