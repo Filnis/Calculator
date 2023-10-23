@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    </style>
 </head>
 <body>
     <div id="screen"></div>
-    <button id="clear" data-key="Delete">AC</button>
-    <button id="delete" data-key="Backspace">Del</button>
-    <button class="numButton" data-key="Numpad7">7</button>
-    <button class="numButton" data-key="Numpad8">8</button>
-    <button class="numButton" data-key="Numpad9">9</button>
-    <button class="numButton" data-key="Numpad4">4</button>
-    <button class="numButton" data-key="Numpad5">5</button>
-    <button class="numButton" data-key="Numpad6">6</button>
-    <button class="numButton" data-key="Numpad1">1</button>
-    <button class="numButton" data-key="Numpad2">2</button>
-    <button class="numButton" data-key="Numpad3">3</button>
-    <button class="opButton" data-key="NumpadDivide">÷</button>
-    <button class="opButton" data-key="NumpadMultiply">X</button>
-    <button class="opButton" data-key="NumpadSubtract">-</button>
-    <button class="opButton" data-key="NumpadAdd">+</button>
-    <button id="equal" data-key="NumpadEnter">=</button>
-
+    <div id="mainButtons">
+        <div class="container">
+            <div class="buttons-above">
+                <button id="clear" data-key="Delete">AC</button>
+                <button id="delete" data-key="Backspace">Del</button>
+            </div>
+            <div class="buttons-middle">
+                <button class="numButton" data-key="Numpad7">7</button>
+                <button class="numButton" data-key="Numpad8">8</button>
+                <button class="numButton" data-key="Numpad9">9</button>
+                <button class="numButton" data-key="Numpad4">4</button>
+                <button class="numButton" data-key="Numpad5">5</button>
+                <button class="numButton" data-key="Numpad6">6</button>
+                <button class="numButton" data-key="Numpad1">1</button>
+                <button class="numButton" data-key="Numpad2">2</button>
+                <button class="numButton" data-key="Numpad3">3</button>
+            </div>
+            <div class="buttons-below">
+                <button class="numButton" data-key="Numpad0">0</button>
+            </div>
+        </div>
+        <div class="buttons-side">
+            <button class="opButton" data-key="NumpadDivide">÷</button>
+            <button class="opButton" data-key="NumpadMultiply">x</button>
+            <button class="opButton" data-key="NumpadSubtract">-</button>
+            <button class="opButton" data-key="NumpadAdd">+</button>
+            <button id="equal" data-key="NumpadEnter">=</button>
+        </div>    
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

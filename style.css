@@ -1,0 +1,67 @@
+body{
+    /* background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%); */
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+#screen{
+    height: 10vh;
+    width: 40vh;
+    background-color: #f4f4f4;
+    font-size: 8vh;
+    text-align: end;
+    box-sizing: border-box;
+    border: 1px solid;
+
+}
+
+#mainButtons{
+    display: flex;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-above, .buttons-middle, .buttons-below{
+    display: flex;
+    width: 30vh;
+    flex-wrap: wrap;
+}
+
+.buttons-below > *{
+    flex-grow: 1;
+}
+
+.buttons-side{
+    display: flex;
+    flex-direction: column;
+    width: 10vh;
+    height: 10vh;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8vh;
+    height: 10vh;
+    text-align: center;
+}
+
+.numButton{
+    height: 10vh;
+    width: 10vh;
+}
+
+.opButton{
+    height: 10vh;
+}
+
+
+.buttons-above > * {
+    width: 15vh;
+    color: indianred;
+}

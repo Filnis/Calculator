@@ -16,7 +16,7 @@ function operate(fNum, op, sNum){
             return add(fNum, sNum);    
         case "-":
             return subtract(fNum, sNum);  
-        case "X":
+        case "x":
             return multiply(fNum, sNum);  
         case "÷":
             return divide(fNum, sNum);  
@@ -39,7 +39,6 @@ let currNum = "";
 
 //variable for current status
 let firstNumIn = false;
-let secondNumIn = false;
 
 // button behaviour
 let numButtons = document.querySelectorAll(".numButton");
@@ -52,9 +51,15 @@ numButtons.forEach(button => button.addEventListener("click", () => {
 let opButtons = document.querySelectorAll(".opButton");
 opButtons.forEach(button => button.addEventListener("click", () => {
     // if an expression has already been entered it gets solved and it becomes the first number
+    console.log(`currNum = ${currNum}`)
+
     if(firstNumIn){
+        console.log(`secondNum = ${secondNum}`)
         secondNum = currNum;
-        result = operate(firstNum, operator, secondNum);
+        // result = operate(firstNum, operator, currNum);
+        result = operate(firstNum, operator, currNum);
+        console.log(`result = ${result}`)
+
         screen.textContent = Math.round(result*1000)/1000;
         firstNum = result;
     } else {
@@ -62,8 +67,10 @@ opButtons.forEach(button => button.addEventListener("click", () => {
     }
     currNum = 0;
     operator = button.textContent;
-    screen.textContent += operator;
+    screen.textContent += " " + operator + " ";
     firstNumIn = true;
+    console.log(`firstnum = ${firstNum}`)
+    console.log(`secondNum = ${secondNum}`)
 }))
 
 let equal = document.getElementById("equal");
@@ -74,6 +81,9 @@ equal.addEventListener("click", () => {
     screen.textContent = Math.round(result*1000)/1000;
     firstNum = result;
     firstNumIn = false;
+    console.log(`firstnum = ${firstNum}`)
+    console.log(`result = ${result}`)
+
 })
 
 let deleteBt = document.getElementById("delete");
